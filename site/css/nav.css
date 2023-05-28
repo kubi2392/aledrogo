@@ -1,0 +1,27 @@
+nav {
+  width: 100%;
+  padding: 20px;
+  background-color: coral;
+}
+form {
+  display: flex;
+  gap: 15px;
+}
+nav > form > input {
+  outline: transparent;
+  border: 1px solid transparent;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+nav > form > input[type="text"] {
+  flex-grow: 1;
+}
+.buttons > input {
+    border: 1px solid transparent;
+    margin-top: 15px;
+    flex-grow: 1;
+    padding: 5px;
+    font-weight: 900;
+    font-size: 24px;
+}

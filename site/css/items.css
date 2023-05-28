@@ -1,0 +1,17 @@
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.pane{
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    height: 400px;
+}
+.pane > img {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: aliceblue;
+}
