@@ -1,3 +1,5 @@
+<?php
+    session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -21,10 +23,15 @@
 </head>
 <body>
     <nav>
+    <div class="links">
+            <a href="add.php" class="add linkable">daodaj</a>
+            <a href="index.php" class="add linkable">główna</a>
+        </div>
         <form method="get">
             <input type="text" placeholder="wrzystko czego pragniesz" name="look">
             <input type="submit" value="wyszukaj">
         </form>
+
         <div>
             <form method="get" class="buttons">
                 <input type="submit" value="ogród" name="look">
@@ -36,7 +43,6 @@
             </form>
         </div>
     </nav>
-    
     <section>
         <?php
         if(isset($_GET["look"])){

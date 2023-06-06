@@ -11,7 +11,15 @@ body {
 .price{
     margin-left: 30px;
     margin-top: 30px;
+    font-size: 20px;
 }
 img {
-  height: 400px;
+  height: 30vh;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.imgandtitle{
+  display: flex;
+  flex-direction: column;
 }

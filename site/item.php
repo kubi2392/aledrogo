@@ -1,3 +1,5 @@
+<?php
+    session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -20,34 +22,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <form method="get">
-            <input type="text" placeholder="wrzystko czego pragniesz" name="look">
-            <input type="submit" value="wyszukaj">
-        </form>
-        <div>
-            <form method="get" class="buttons">
-                <input type="submit" value="ogród" name="look">
-                <input type="submit" value="ubrania" name="look">
-                <input type="submit" value="auto" name="look">
-                <input type="submit" value="dom" name="look">
-                <input type="submit" value="zwierzęta" name="look">
-                <input type="submit" value="technologia" name="look">
-            </form>
+<nav>
+<div class="links">
+            <a href="add.php" class="add linkable">daodaj</a>
+            <a href="index.php" class="add linkable">główna</a>
         </div>
-        
+        <form action="" method="post"></form>
     </nav>
+    submit
+    <?php 
+    if(isset($_GET['success']) && $_GET['success'] == 1){
+        echo "<p>Udało się dodać do koszyka</p>";
+    }
+    ?>
     <div class='card'>
         <?php
+
             $conect = mysqli_connect("localhost","root","","aledrogo");
-            $zap = "select nazwa,cena,zdiecie from produkty WHERE id = ".$_GET['id'].";";
+            $zap = "select * from produkty WHERE id = ".$_GET['id'].";";
             $query = mysqli_query($conect,$zap);
             while($data = mysqli_fetch_row($query)){
-                echo "<span><p>nazwa:$data[0]</p><img src='$data[2]' alt='no img'></span><p class='price'>cena:$data[1]zł</p>";
+                echo "<div class='imgandtitle'>
+                    <p>nazwa:$data[2]</p>
+                    <img src='$data[5]' alt='no img'>
+                </div>
+                <p class='price'>cena:$data[3]zł</p>";
             }
             mysqli_close($conect);
         ?>
-        
+        <form action="/aledrogo/site/api/cardpost.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+            <label for="Sztuk:"></label>
+            <input type="number" name="many" id="many">
+            <input type="submit" value="Dodaj">
+            
+        </form>
     </div>
 </body>
 </html>

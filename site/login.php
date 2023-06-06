@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dodaj produkt</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/add.css">
@@ -21,15 +21,12 @@
             <a href="index.php" class="add linkable">główna</a>
         </div>
     </nav>
-    <form method="post" action="./api/add.php">
-        <p>dodaj produkt</p>
-        <span><input type="number" name="id">id dostawcy</span>
-        <span><input type="text" name="name">nzawa</span>
-        <span><input type="number" name="price">cena</span>
-        <span><input type="text" name="desc">opis</span>
-        <span><input type="text" name="photo">zdiece</span>
-        <span><input type="text" name="category">kategoria</span>
-        <input type="submit" value="dodaj">
+    <form method="post" action="api/login.php">
+        <label for="login" require>Login:</label>
+        <input type="text" name="login" id="login">
+        <label for="password">Hasło:</label>
+        <input type="password" require name="password" id="password">
+        <input type="submit" value="Zaloguj">
     </form>
 </body>
 </html>
