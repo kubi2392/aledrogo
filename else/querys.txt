@@ -31,3 +31,13 @@ SELECT dostawca.imie, dostawca.nazwisko, kraje.nazwa_kraju
 FROM dostawca INNER JOIN kraje 
 ON dostawca.id_kraju = kraje.id
 WHERE dostawca.id = 4;
+8
+SELECT k.imie as imie_klienta, k.nazwisko as nazwisko_klienta, SUM(t.ilosc) AS suma_zamówionych_przedmiotów 
+FROM klient as k INNER JOIN tranzakcje AS t 
+ON t.id_klienta = k.id 
+WHERE t.id_produktu = 4 
+GROUP BY k.id; 
+9
+SELECT * FROM `tranzakcje` 
+WHERE `tranzakcje`.`DATA_tranzakcji` LIKE "2022%" && `tranzakcje`.`dostarczono` = 1 
+ORDER BY `tranzakcje`.`id` ASC 
