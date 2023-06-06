@@ -1,20 +1,15 @@
-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: orange;
-}
+
 .card{
     display: flex;
     flex-wrap: wrap;
 }
 .price{
     margin-left: 30px;
-    margin-top: 30px;
+    margin-top: 70px;
     font-size: 20px;
 }
 img {
-  height: 30vh;
+  height: 40vh;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -22,4 +17,12 @@ img {
 .imgandtitle{
   display: flex;
   flex-direction: column;
+}
+input{
+  margin-top: 70px;
+  height: 30px;
+}
+label{
+  margin-top: 70px;
+  margin-left: 50px;
 }

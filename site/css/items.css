@@ -1,14 +1,21 @@
 
 section{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 5px;
 }
 .pane{
-    width: 300px;
+    width: 200px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 8px;
-    height: 400px;
+    height: 300px;
+}
+.pane > p{
+    font-size: 16px;
 }
 .pane > img {
     width: 100%;

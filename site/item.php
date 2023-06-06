@@ -23,17 +23,19 @@
 </head>
 <body>
 <nav>
+
 <div class="links">
             <a href="add.php" class="add linkable">daodaj</a>
             <a href="index.php" class="add linkable">główna</a>
         </div>
         <form action="" method="post"></form>
     </nav>
-    submit
+    
     <?php 
     if(isset($_GET['success']) && $_GET['success'] == 1){
         echo "<p>Udało się dodać do koszyka</p>";
     }
+    
     ?>
     <div class='card'>
         <?php
@@ -44,17 +46,19 @@
             while($data = mysqli_fetch_row($query)){
                 echo "<div class='imgandtitle'>
                     <p>nazwa:$data[2]</p>
-                    <img src='$data[5]' alt='no img'>
-                </div>
-                <p class='price'>cena:$data[3]zł</p>";
+                    <img src='$data[5]' alt='$data[5]'>
+                    <a href='./dostawca.php?id=$data[1]'>dostawca</a>
+                    </div>
+                    <p class='price'>cena:$data[3]zł</p>"
+                    ;
             }
             mysqli_close($conect);
         ?>
         <form action="/aledrogo/site/api/cardpost.php" method="post">
             <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-            <label for="Sztuk:"></label>
-            <input type="number" name="many" id="many">
-            <input type="submit" value="Dodaj">
+            <label for="">Sztuk:</label>
+            <input type="number" name="many" id="many" placeholder="ilość sztuk">
+            <input type="submit" value="Dodaj do koszyka">
             
         </form>
     </div>

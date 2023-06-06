@@ -35,11 +35,11 @@
         <div>
             <form method="get" class="buttons">
                 <input type="submit" value="ogród" name="look">
-                <input type="submit" value="ubrania" name="look">
-                <input type="submit" value="auto" name="look">
+                <input type="submit" value="relaks" name="look">
+                <input type="submit" value="meble" name="look">
                 <input type="submit" value="dom" name="look">
-                <input type="submit" value="zwierzęta" name="look">
-                <input type="submit" value="technologia" name="look">
+                <input type="submit" value="jedzenie" name="look">
+                <input type="submit" value="kuchnia" name="look">
             </form>
         </div>
     </nav>
@@ -55,7 +55,7 @@
         $zap = "select nazwa,cena,zdiecie,id from produkty WHERE kategoria LIKE '%$look%' OR nazwa LIKE '%$look%';";
         $query = mysqli_query($conect,$zap);
         while($data = mysqli_fetch_row($query)){
-            echo "<a href='./item.php?id=$data[3]'&name=$data[0]><div class='pane'><p>$data[0]</p><img src='$data[2]' alt='no img'><p>cena:$data[1]zł</p></div></a>";
+            echo "<a href='./item.php?id=$data[3]'&name=$data[0]><div class='pane'><p>$data[0]</p><img src='$data[2]' alt='$data[2]'><p>cena:$data[1]zł</p></div></a>";
         }
         mysqli_close($conect);
         ?>

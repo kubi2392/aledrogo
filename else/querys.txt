@@ -1,0 +1,33 @@
+1 wybieranie nazwy ceny zdięcia i id gdzie kategoria lub nazwa posiada w sobie "ka"
+select nazwa,cena,zdiecie,id 
+from produkty 
+WHERE kategoria LIKE '%$ka%' OR nazwa LIKE '%$ka%';
+2 wybieranie z produktów gdzie id = 1
+select * 
+from produkty 
+WHERE id = 1;
+3 wypisanie dostawców imienia i nazwiska z id kraju "26" z tabeli kraje i pskrótu kraju
+SELECT imie,nazwisko,k.skrut 
+FROM dostawca as d INNER JOIN kraje as k ON
+id_kraju = k.id
+WHERE k.id = 3;
+4 
+INSERT INTO `produkty`
+(`id_dostawca`, `nazwa`, `cena`, `opis`, `zdiecie`, `kategoria`) 
+VALUES 
+('6','wąż','22.31','wąż ogrodowy wysoko ciśnieniowy','waz.png','ogród');
+5
+INSERT INTO koszyki
+(klient_id, produkt_id, ilosc) 
+VALUES 
+(3, 2, 4);
+6
+SELECT password, konta.id, klient.id 
+FROM `konta` INNER JOIN klient 
+ON klient.id_konta = konta.id 
+LIMIT 1;
+7
+SELECT dostawca.imie, dostawca.nazwisko, kraje.nazwa_kraju 
+FROM dostawca INNER JOIN kraje 
+ON dostawca.id_kraju = kraje.id
+WHERE dostawca.id = 4;
