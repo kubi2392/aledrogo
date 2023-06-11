@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Maj 2023, 15:44
+-- Czas generowania: 11 Cze 2023, 22:46
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -151,114 +151,156 @@ CREATE TABLE `klient` (
   `imie` varchar(50) CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL,
   `nazwisko` varchar(50) CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL,
   `nr_tel` varchar(12) CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL,
-  `miasto` varchar(200) CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL
+  `miasto` varchar(200) CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL,
+  `id_konta` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Zrzut danych tabeli `klient`
 --
 
-INSERT INTO `klient` (`id`, `imie`, `nazwisko`, `nr_tel`, `miasto`) VALUES
-(1, 'Adam', 'Nowak', '600123456', 'Warszawa'),
-(2, 'Anna', 'Kowalska', '505987654', 'Kraków'),
-(3, 'Piotr', 'Lewandowski', '666555222', 'Gdańsk'),
-(4, 'Maria', 'Wójcik', '123456789', 'Poznań'),
-(5, 'Andrzej', 'Kaczmarek', '789987654', 'Wrocław'),
-(6, 'Aleksandra', 'Jankowska', '602111222', 'Warszawa'),
-(7, 'Michał', 'Wiśniewski', '500222333', 'Kraków'),
-(8, 'Karolina', 'Nowicka', '666333444', 'Gdańsk'),
-(9, 'Jan', 'Kowalczyk', '111444555', 'Poznań'),
-(10, 'Magdalena', 'Szymańska', '789666777', 'Wrocław'),
-(11, 'Krzysztof', 'Wójcik', '502888999', 'Warszawa'),
-(12, 'Ewa', 'Lis', '501444555', 'Kraków'),
-(13, 'Tomasz', 'Kowalski', '667555666', 'Gdańsk'),
-(14, 'Natalia', 'Wiśniewska', '124555666', 'Poznań'),
-(15, 'Marcin', 'Kaczmarek', '789777888', 'Wrocław'),
-(16, 'Marta', 'Kowalczyk', '603222333', 'Warszawa'),
-(17, 'Paweł', 'Szymański', '506333444', 'Kraków'),
-(18, 'Monika', 'Jankowska', '666444555', 'Gdańsk'),
-(19, 'Adam', 'Kowalski', '111555666', 'Poznań'),
-(20, 'Katarzyna', 'Wójcik', '789888999', 'Wrocław'),
-(21, 'Jan', 'Nowak', '504444555', 'Warszawa'),
-(22, 'Anna', 'Kowalska', '666555666', 'Kraków'),
-(23, 'Piotr', 'Lewandowski', '125888999', 'Gdańsk'),
-(24, 'Maria', 'Wójcik', '789111222', 'Poznań'),
-(25, 'Andrzej', 'Kaczmarek', '605222333', 'Wrocław'),
-(26, 'Aleksandra', 'Jankowska', '507333444', 'Warszawa'),
-(27, 'Michał', 'Wiśniewski', '666444555', 'Kraków'),
-(28, 'Karolina', 'Nowicka', '126555666', 'Gdańsk'),
-(29, 'Jan', 'Kowalczyk', '789777888', 'Poznań'),
-(30, 'Magdalena', 'Szymańska', '607888999', 'Wrocław'),
-(31, 'Krzysztof', 'Wójcik', '503333444', 'Warszawa'),
-(32, 'Ewa', 'Lis', '666222333', 'Kraków'),
-(33, 'Tomasz', 'Kowalski', '127444555', 'Gdańsk'),
-(34, 'Natalia', 'Wiśniewska', '789555666', 'Poznań'),
-(35, 'Marcin', 'Kaczmarek', '609777888', 'Wrocław'),
-(36, 'Marta', 'Kowalczyk', '505222333', 'Warszawa'),
-(37, 'Paweł', 'Szymański', '666333444', 'Kraków'),
-(38, 'Monika', 'Jankowska', '128444555', 'Gdańsk'),
-(39, 'Adam', 'Kowalski', '789666777', 'Poznań'),
-(40, 'Katarzyna', 'Wójcik', '611888999', 'Wrocław'),
-(41, 'Jan', 'Nowak', '502111222', 'Warszawa'),
-(42, 'Anna', 'Kowalska', '666888999', 'Kraków'),
-(43, 'Piotr', 'Lewandowski', '129333444', 'Gdańsk'),
-(44, 'Maria', 'Wójcik', '789444555', 'Poznań'),
-(45, 'Andrzej', 'Kaczmarek', '613777888', 'Wrocław'),
-(46, 'Aleksandra', 'Jankowska', '504222333', 'Warszawa'),
-(47, 'Michał', 'Wiśniewski', '666111222', 'Kraków'),
-(48, 'Karolina', 'Nowicka', '130444555', 'Gdańsk'),
-(49, 'Jan', 'Kowalczyk', '789555666', 'Poznań'),
-(50, 'Magdalena', 'Szymańska', '615777888', 'Wrocław'),
-(51, 'Krzysztof', 'Wójcik', '501222333', 'Warszawa'),
-(52, 'Ewa', 'Lis', '666555666', 'Kraków'),
-(53, 'Tomasz', 'Kowalski', '131777888', 'Gdańsk'),
-(54, 'Natalia', 'Wiśniewska', '789777888', 'Poznań'),
-(55, 'Marcin', 'Kaczmarek', '617222333', 'Wrocław'),
-(56, 'Marta', 'Kowalczyk', '503333444', 'Warszawa'),
-(57, 'Paweł', 'Szymański', '666222333', 'Kraków'),
-(58, 'Monika', 'Jankowska', '132333444', 'Gdańsk'),
-(59, 'Adam', 'Kowalski', '789888999', 'Poznań'),
-(60, 'Katarzyna', 'Wójcik', '619111222', 'Wrocław'),
-(61, 'Jan', 'Nowak', '500444555', 'Warszawa'),
-(62, 'Anna', 'Kowalska', '666777888', 'Kraków'),
-(63, 'Piotr', 'Lewandowski', '133555666', 'Gdańsk'),
-(64, 'Maria', 'Wójcik', '789111222', 'Poznań'),
-(65, 'Andrzej', 'Kaczmarek', '621444555', 'Wrocław'),
-(66, 'Aleksandra', 'Jankowska', '502888999', 'Warszawa'),
-(67, 'Michał', 'Wiśniewski', '666999000', 'Kraków'),
-(68, 'Karolina', 'Nowicka', '134444555', 'Gdańsk'),
-(69, 'Jan', 'Kowalczyk', '789222333', 'Poznań'),
-(70, 'Magdalena', 'Szymańska', '623777888', 'Wrocław'),
-(71, 'Krzysztof', 'Wójcik', '501444555', 'Warszawa'),
-(72, 'Ewa', 'Lis', '666222333', 'Kraków'),
-(73, 'Tomasz', 'Kowalski', '135777888', 'Gdańsk'),
-(74, 'Natalia', 'Wiśniewska', '789333444', 'Poznań'),
-(75, 'Marcin', 'Kaczmarek', '625222333', 'Wrocław'),
-(76, 'Marta', 'Kowalczyk', '503444555', 'Warszawa'),
-(77, 'Paweł', 'Szymański', '666111222', 'Kraków'),
-(78, 'Monika', 'Jankowska', '136444555', 'Gdańsk'),
-(79, 'Adam', 'Kowalski', '789555666', 'Poznań'),
-(80, 'Katarzyna', 'Wójcik', '627888999', 'Wrocław'),
-(81, 'Jan', 'Nowak', '504222333', 'Warszawa'),
-(82, 'Anna', 'Kowalska', '666555666', 'Kraków'),
-(83, 'Piotr', 'Lewandowski', '137888999', 'Gdańsk'),
-(84, 'Maria', 'Wójcik', '789444555', 'Poznań'),
-(85, 'Andrzej', 'Kaczmarek', '629777888', 'Wrocław'),
-(86, 'Aleksandra', 'Jankowska', '505222333', 'Warszawa'),
-(87, 'Michał', 'Wiśniewski', '666333444', 'Kraków'),
-(88, 'Karolina', 'Nowicka', '138444555', 'Gdańsk'),
-(89, 'Jan', 'Kowalczyk', '789666777', 'Poznań'),
-(90, 'Magdalena', 'Szymańska', '631888999', 'Wrocław'),
-(91, 'Krzysztof', 'Wójcik', '506333444', 'Warszawa'),
-(92, 'Ewa', 'Lis', '666444555', 'Kraków'),
-(93, 'Tomasz', 'Kowalski', '139777888', 'Gdańsk'),
-(94, 'Natalia', 'Wiśniewska', '789777888', 'Poznań'),
-(95, 'Marcin', 'Kaczmarek', '633222333', 'Wrocław'),
-(96, 'Marta', 'Kowalczyk', '507444555', 'Warszawa'),
-(97, 'Paweł', 'Szymański', '666555666', 'Kraków'),
-(98, 'Monika', 'Jankowska', '140555666', 'Gdańsk'),
-(99, 'Adam', 'Kowalski', '789888999', 'Poznań'),
-(100, 'Katarzyna', 'Wójcik', '635777888', 'Wrocław');
+INSERT INTO `klient` (`id`, `imie`, `nazwisko`, `nr_tel`, `miasto`, `id_konta`) VALUES
+(1, 'Adam', 'Nowak', '600123456', 'Warszawa', 1),
+(2, 'Anna', 'Kowalska', '505987654', 'Kraków', NULL),
+(3, 'Piotr', 'Lewandowski', '666555222', 'Gdańsk', NULL),
+(4, 'Maria', 'Wójcik', '123456789', 'Poznań', NULL),
+(5, 'Andrzej', 'Kaczmarek', '789987654', 'Wrocław', NULL),
+(6, 'Aleksandra', 'Jankowska', '602111222', 'Warszawa', NULL),
+(7, 'Michał', 'Wiśniewski', '500222333', 'Kraków', NULL),
+(8, 'Karolina', 'Nowicka', '666333444', 'Gdańsk', NULL),
+(9, 'Jan', 'Kowalczyk', '111444555', 'Poznań', NULL),
+(10, 'Magdalena', 'Szymańska', '789666777', 'Wrocław', NULL),
+(11, 'Krzysztof', 'Wójcik', '502888999', 'Warszawa', NULL),
+(12, 'Ewa', 'Lis', '501444555', 'Kraków', NULL),
+(13, 'Tomasz', 'Kowalski', '667555666', 'Gdańsk', NULL),
+(14, 'Natalia', 'Wiśniewska', '124555666', 'Poznań', NULL),
+(15, 'Marcin', 'Kaczmarek', '789777888', 'Wrocław', NULL),
+(16, 'Marta', 'Kowalczyk', '603222333', 'Warszawa', NULL),
+(17, 'Paweł', 'Szymański', '506333444', 'Kraków', NULL),
+(18, 'Monika', 'Jankowska', '666444555', 'Gdańsk', NULL),
+(19, 'Adam', 'Kowalski', '111555666', 'Poznań', NULL),
+(20, 'Katarzyna', 'Wójcik', '789888999', 'Wrocław', NULL),
+(21, 'Jan', 'Nowak', '504444555', 'Warszawa', NULL),
+(22, 'Anna', 'Kowalska', '666555666', 'Kraków', NULL),
+(23, 'Piotr', 'Lewandowski', '125888999', 'Gdańsk', NULL),
+(24, 'Maria', 'Wójcik', '789111222', 'Poznań', NULL),
+(25, 'Andrzej', 'Kaczmarek', '605222333', 'Wrocław', NULL),
+(26, 'Aleksandra', 'Jankowska', '507333444', 'Warszawa', NULL),
+(27, 'Michał', 'Wiśniewski', '666444555', 'Kraków', NULL),
+(28, 'Karolina', 'Nowicka', '126555666', 'Gdańsk', NULL),
+(29, 'Jan', 'Kowalczyk', '789777888', 'Poznań', NULL),
+(30, 'Magdalena', 'Szymańska', '607888999', 'Wrocław', NULL),
+(31, 'Krzysztof', 'Wójcik', '503333444', 'Warszawa', NULL),
+(32, 'Ewa', 'Lis', '666222333', 'Kraków', NULL),
+(33, 'Tomasz', 'Kowalski', '127444555', 'Gdańsk', NULL),
+(34, 'Natalia', 'Wiśniewska', '789555666', 'Poznań', NULL),
+(35, 'Marcin', 'Kaczmarek', '609777888', 'Wrocław', NULL),
+(36, 'Marta', 'Kowalczyk', '505222333', 'Warszawa', NULL),
+(37, 'Paweł', 'Szymański', '666333444', 'Kraków', NULL),
+(38, 'Monika', 'Jankowska', '128444555', 'Gdańsk', NULL),
+(39, 'Adam', 'Kowalski', '789666777', 'Poznań', NULL),
+(40, 'Katarzyna', 'Wójcik', '611888999', 'Wrocław', NULL),
+(41, 'Jan', 'Nowak', '502111222', 'Warszawa', NULL),
+(42, 'Anna', 'Kowalska', '666888999', 'Kraków', NULL),
+(43, 'Piotr', 'Lewandowski', '129333444', 'Gdańsk', NULL),
+(44, 'Maria', 'Wójcik', '789444555', 'Poznań', NULL),
+(45, 'Andrzej', 'Kaczmarek', '613777888', 'Wrocław', NULL),
+(46, 'Aleksandra', 'Jankowska', '504222333', 'Warszawa', NULL),
+(47, 'Michał', 'Wiśniewski', '666111222', 'Kraków', NULL),
+(48, 'Karolina', 'Nowicka', '130444555', 'Gdańsk', NULL),
+(49, 'Jan', 'Kowalczyk', '789555666', 'Poznań', NULL),
+(50, 'Magdalena', 'Szymańska', '615777888', 'Wrocław', NULL),
+(51, 'Krzysztof', 'Wójcik', '501222333', 'Warszawa', NULL),
+(52, 'Ewa', 'Lis', '666555666', 'Kraków', NULL),
+(53, 'Tomasz', 'Kowalski', '131777888', 'Gdańsk', NULL),
+(54, 'Natalia', 'Wiśniewska', '789777888', 'Poznań', NULL),
+(55, 'Marcin', 'Kaczmarek', '617222333', 'Wrocław', NULL),
+(56, 'Marta', 'Kowalczyk', '503333444', 'Warszawa', NULL),
+(57, 'Paweł', 'Szymański', '666222333', 'Kraków', NULL),
+(58, 'Monika', 'Jankowska', '132333444', 'Gdańsk', NULL),
+(59, 'Adam', 'Kowalski', '789888999', 'Poznań', NULL),
+(60, 'Katarzyna', 'Wójcik', '619111222', 'Wrocław', NULL),
+(61, 'Jan', 'Nowak', '500444555', 'Warszawa', NULL),
+(62, 'Anna', 'Kowalska', '666777888', 'Kraków', NULL),
+(63, 'Piotr', 'Lewandowski', '133555666', 'Gdańsk', NULL),
+(64, 'Maria', 'Wójcik', '789111222', 'Poznań', NULL),
+(65, 'Andrzej', 'Kaczmarek', '621444555', 'Wrocław', NULL),
+(66, 'Aleksandra', 'Jankowska', '502888999', 'Warszawa', NULL),
+(67, 'Michał', 'Wiśniewski', '666999000', 'Kraków', NULL),
+(68, 'Karolina', 'Nowicka', '134444555', 'Gdańsk', NULL),
+(69, 'Jan', 'Kowalczyk', '789222333', 'Poznań', NULL),
+(70, 'Magdalena', 'Szymańska', '623777888', 'Wrocław', NULL),
+(71, 'Krzysztof', 'Wójcik', '501444555', 'Warszawa', NULL),
+(72, 'Ewa', 'Lis', '666222333', 'Kraków', NULL),
+(73, 'Tomasz', 'Kowalski', '135777888', 'Gdańsk', NULL),
+(74, 'Natalia', 'Wiśniewska', '789333444', 'Poznań', NULL),
+(75, 'Marcin', 'Kaczmarek', '625222333', 'Wrocław', NULL),
+(76, 'Marta', 'Kowalczyk', '503444555', 'Warszawa', NULL),
+(77, 'Paweł', 'Szymański', '666111222', 'Kraków', NULL),
+(78, 'Monika', 'Jankowska', '136444555', 'Gdańsk', NULL),
+(79, 'Adam', 'Kowalski', '789555666', 'Poznań', NULL),
+(80, 'Katarzyna', 'Wójcik', '627888999', 'Wrocław', NULL),
+(81, 'Jan', 'Nowak', '504222333', 'Warszawa', NULL),
+(82, 'Anna', 'Kowalska', '666555666', 'Kraków', NULL),
+(83, 'Piotr', 'Lewandowski', '137888999', 'Gdańsk', NULL),
+(84, 'Maria', 'Wójcik', '789444555', 'Poznań', NULL),
+(85, 'Andrzej', 'Kaczmarek', '629777888', 'Wrocław', NULL),
+(86, 'Aleksandra', 'Jankowska', '505222333', 'Warszawa', NULL),
+(87, 'Michał', 'Wiśniewski', '666333444', 'Kraków', NULL),
+(88, 'Karolina', 'Nowicka', '138444555', 'Gdańsk', NULL),
+(89, 'Jan', 'Kowalczyk', '789666777', 'Poznań', NULL),
+(90, 'Magdalena', 'Szymańska', '631888999', 'Wrocław', NULL),
+(91, 'Krzysztof', 'Wójcik', '506333444', 'Warszawa', NULL),
+(92, 'Ewa', 'Lis', '666444555', 'Kraków', NULL),
+(93, 'Tomasz', 'Kowalski', '139777888', 'Gdańsk', NULL),
+(94, 'Natalia', 'Wiśniewska', '789777888', 'Poznań', NULL),
+(95, 'Marcin', 'Kaczmarek', '633222333', 'Wrocław', NULL),
+(96, 'Marta', 'Kowalczyk', '507444555', 'Warszawa', NULL),
+(97, 'Paweł', 'Szymański', '666555666', 'Kraków', NULL),
+(98, 'Monika', 'Jankowska', '140555666', 'Gdańsk', NULL),
+(99, 'Adam', 'Kowalski', '789888999', 'Poznań', NULL),
+(100, 'Katarzyna', 'Wójcik', '635777888', 'Wrocław', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `konta`
+--
+
+CREATE TABLE `konta` (
+  `id` int(11) NOT NULL,
+  `login` varchar(16) NOT NULL,
+  `password` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `konta`
+--
+
+INSERT INTO `konta` (`id`, `login`, `password`) VALUES
+(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `koszyki`
+--
+
+CREATE TABLE `koszyki` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `klient_id` int(10) UNSIGNED NOT NULL,
+  `produkt_id` int(10) UNSIGNED NOT NULL,
+  `ilosc` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `koszyki`
+--
+
+INSERT INTO `koszyki` (`id`, `klient_id`, `produkt_id`, `ilosc`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 1),
+(3, 1, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -333,11 +375,11 @@ INSERT INTO `kraje` (`id`, `nazwa_kraju`, `skrut`) VALUES
 CREATE TABLE `produkty` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_dostawca` int(10) UNSIGNED NOT NULL,
-  `nazwa` varchar(50) DEFAULT NULL,
+  `nazwa` varchar(50) CHARACTER SET utf16 COLLATE utf16_polish_ci DEFAULT NULL COMMENT 'nazwa przedmiotu',
   `cena` decimal(10,2) DEFAULT NULL,
-  `opis` text DEFAULT NULL,
-  `zdiecie` varchar(100) DEFAULT NULL,
-  `kategoria` text NOT NULL
+  `opis` text CHARACTER SET utf16 COLLATE utf16_polish_ci DEFAULT NULL,
+  `zdiecie` varchar(100) CHARACTER SET utf16 COLLATE utf16_polish_ci DEFAULT NULL COMMENT 'zdjęcie jako tekst z końcówką .jpg',
+  `kategoria` text CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -345,7 +387,36 @@ CREATE TABLE `produkty` (
 --
 
 INSERT INTO `produkty` (`id`, `id_dostawca`, `nazwa`, `cena`, `opis`, `zdiecie`, `kategoria`) VALUES
-(1, 1, 'abcd', '23.00', 'testowy', 'test.jpg', 'pies');
+(1, 2, 'kanapa', '450.00', 'no kanapa a co szukasz?', 'kanapa.jpg', 'dom_meble'),
+(2, 4, 'krzesło', '150.99', 'no krzesło a co szukasz?', 'krzeslo.jpg', 'dom_meble'),
+(3, 2, 'stół', '500.00', 'no stół a co szukasz?', 'stul.jpg', 'dom_meble'),
+(4, 3, 'biurko', '200.00', 'no biurko a co szukasz?', 'biurko.jpg', 'dom_meble'),
+(5, 34, 'szafa', '700.00', 'no szafa a co szukasz?', 'szafa.jpg', 'dom_meble'),
+(6, 22, 'deska do krojenia', '23.50', 'deska z drewna', 'deska.jpg', 'gotowanie_kuchnia'),
+(7, 22, 'ziemniaki', '2.55', 'ziemniaki Polskie 1kg', 'pyry.jpg', 'jedzenie_gotowanie_kuchnia'),
+(8, 54, 'tależe', '99.99', 'zestaw 10 tależy', 'talez.jpg', 'gotowanie_kuchnia'),
+(9, 32, 'nóż', '45.99', 'ostry nóż do krojenia', 'noz.jpg', 'gotowanie_kuchnia'),
+(10, 87, 'garnek', '55.99', 'garnek z powłoką antyprzylepną', 'gar.jpg', 'gotowanie_kuchnia'),
+(11, 34, 'wąż żeczny ciśnieniowy', '45.99', ' długość 25 metrów w przekroju 15mm', 'waz.jpg', 'ogród_dom_działka'),
+(12, 56, 'basen', '399.99', 'basen dmuchany wymiary 250cm/350cm/50cm', 'basen.jpg', 'relaks_ogród_dom_działka'),
+(13, 34, 'leżak', '159.99', 'leżal leżysz i masz', 'leżak.jpg', 'relaks_ogród_dom_działka'),
+(14, 34, 'wiadro', '9.99', 'wiadro 25L', 'wiadro.jpg', 'ogród_dom_działka'),
+(15, 99, 'łopata', '69.99', 'lekka aluminiowa łopata', 'lopata.jpg', 'ogród_dom_działka'),
+(16, 3, 'sól', '5.55', 'sól 1kg', 'sol.jpg', 'jedzenie_kuchnia_gotowanie'),
+(17, 5, 'papryka słodka', '19.99', 'papryka słodka suszona 1kg', 'papryka.jpg', 'jedzenie_kuchnia_gotowanie'),
+(18, 3, 'kawa', '29.99', 'kawa ziarna 1kg', 'kawa.jpg', 'jedzenie_kuchnia_gotowanie'),
+(19, 7, 'pływaczki', '25.99', 'pływaczki dla dzieci 3-6lat', 'plywaczki.jpg', 'ubrania_lato_akcesoria'),
+(20, 58, 'koło ratunkowe', '45.99', 'ratuje ludzi niewiem co chcesz od koła ratunkowego', 'koloratunkowe.jpg', 'ubrania_lato_akcesoria'),
+(21, 23, 'sól', '5.55', 'sól 1kg', 'sol.jpg', 'jedzenie_kuchnia_gotowanie'),
+(22, 65, 'papryka słodka', '19.99', 'papryka słodka suszona 1kg', 'papryka.jpg', 'jedzenie_kuchnia_gotowanie'),
+(23, 53, 'kawa', '29.99', 'kawa ziarna 1kg', 'kawa.jpg', 'jedzenie_kuchnia_gotowanie'),
+(24, 97, 'pływaczki', '19.99', 'pływaczki dla dzieci 3-6lat', 'plywaczki.jpg', 'ubrania_lato_akcesoria'),
+(25, 64, 'koło ratunkowe', '45.99', 'ratuje ludzi niewiem co chcesz od koła ratunkowego', 'koloratunkowe.jpg', 'ubrania_lato_akcesoria'),
+(26, 34, 'sól', '10.55', 'sól 1kg', 'sol.jpg', 'jedzenie_kuchnia_gotowanie'),
+(27, 15, 'papryka słodka', '19.99', 'papryka słodka suszona 1kg', 'papryka.jpg', 'jedzenie_kuchnia_gotowanie'),
+(28, 32, 'kawa', '29.99', 'kawa ziarna 1kg', 'kawa.jpg', 'jedzenie_kuchnia_gotowanie'),
+(29, 57, 'pływaczki', '19.00', 'pływaczki dla dzieci 3-6lat', 'plywaczki.jpg', 'ubrania_lato_akcesoria'),
+(30, 9, 'koło ratunkowe', '35.00', 'ratuje ludzi niewiem co chcesz od koła ratunkowego', 'koloratunkowe.jpg', 'ubrania_lato_akcesoria');
 
 -- --------------------------------------------------------
 
@@ -358,7 +429,7 @@ CREATE TABLE `tranzakcje` (
   `id_klienta` int(10) UNSIGNED NOT NULL,
   `id_produktu` int(10) UNSIGNED NOT NULL,
   `ilosc` int(11) DEFAULT NULL,
-  `dostarczono` tinyint(1) DEFAULT NULL,
+  `dostarczono` tinyint(1) DEFAULT NULL COMMENT '1 dostarczone \r\n0 niedostarczone',
   `DATA_tranzakcji` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -576,13 +647,29 @@ INSERT INTO `tranzakcje` (`id`, `id_klienta`, `id_produktu`, `ilosc`, `dostarczo
 -- Indeksy dla tabeli `dostawca`
 --
 ALTER TABLE `dostawca`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_kraju` (`id_kraju`);
 
 --
 -- Indeksy dla tabeli `klient`
 --
 ALTER TABLE `klient`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_konta` (`id_konta`);
+
+--
+-- Indeksy dla tabeli `konta`
+--
+ALTER TABLE `konta`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `koszyki`
+--
+ALTER TABLE `koszyki`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `klient_id` (`klient_id`),
+  ADD KEY `produkt_id` (`produkt_id`);
 
 --
 -- Indeksy dla tabeli `kraje`
@@ -594,13 +681,16 @@ ALTER TABLE `kraje`
 -- Indeksy dla tabeli `produkty`
 --
 ALTER TABLE `produkty`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_dostawca` (`id_dostawca`);
 
 --
 -- Indeksy dla tabeli `tranzakcje`
 --
 ALTER TABLE `tranzakcje`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_klienta` (`id_klienta`),
+  ADD KEY `id_produktu` (`id_produktu`);
 
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
@@ -619,6 +709,18 @@ ALTER TABLE `klient`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT dla tabeli `konta`
+--
+ALTER TABLE `konta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT dla tabeli `koszyki`
+--
+ALTER TABLE `koszyki`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT dla tabeli `kraje`
 --
 ALTER TABLE `kraje`
@@ -628,13 +730,50 @@ ALTER TABLE `kraje`
 -- AUTO_INCREMENT dla tabeli `produkty`
 --
 ALTER TABLE `produkty`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT dla tabeli `tranzakcje`
 --
 ALTER TABLE `tranzakcje`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=243;
+
+--
+-- Ograniczenia dla zrzutów tabel
+--
+
+--
+-- Ograniczenia dla tabeli `dostawca`
+--
+ALTER TABLE `dostawca`
+  ADD CONSTRAINT `dostawca_ibfk_1` FOREIGN KEY (`id_kraju`) REFERENCES `kraje` (`id`);
+
+--
+-- Ograniczenia dla tabeli `klient`
+--
+ALTER TABLE `klient`
+  ADD CONSTRAINT `klient_ibfk_1` FOREIGN KEY (`id_konta`) REFERENCES `konta` (`id`);
+
+--
+-- Ograniczenia dla tabeli `koszyki`
+--
+ALTER TABLE `koszyki`
+  ADD CONSTRAINT `koszyki_ibfk_1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`),
+  ADD CONSTRAINT `koszyki_ibfk_2` FOREIGN KEY (`produkt_id`) REFERENCES `produkty` (`id`);
+
+--
+-- Ograniczenia dla tabeli `produkty`
+--
+ALTER TABLE `produkty`
+  ADD CONSTRAINT `produkty_ibfk_1` FOREIGN KEY (`id_dostawca`) REFERENCES `dostawca` (`id`);
+
+--
+-- Ograniczenia dla tabeli `tranzakcje`
+--
+ALTER TABLE `tranzakcje`
+  ADD CONSTRAINT `tranzakcje_ibfk_1` FOREIGN KEY (`id_klienta`) REFERENCES `klient` (`id`),
+  ADD CONSTRAINT `tranzakcje_ibfk_2` FOREIGN KEY (`id_klienta`) REFERENCES `klient` (`id`),
+  ADD CONSTRAINT `tranzakcje_ibfk_3` FOREIGN KEY (`id_produktu`) REFERENCES `produkty` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
